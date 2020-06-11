@@ -27,23 +27,36 @@
 
             <p>
 
-                Test No. <font color="red"> <B> 3 </B> </font>
+                Test No. <font color="red"> <B> 5 </B> </font>
 
             </p>
 
         </div>
 
-        <div class="progress" id="progress-1">
-          <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+        <div class="progress">
+          <div class="progress-bar" id="prb1" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
               <span class="sr-only">0% complete</span>
           </div>
         </div>
 
+        <button class='button buttonset-1' id="plus">증가</button>
+        <button class='button buttonset-1' id="minus">감소</button>
+
         <script>
 
-          $("#progress-1").click(function(){
+          $(".buttonset-1").click(function(){
 
-                $(this).attr('aria-valuenow',50);
+              var selectedId = $(this).attr("id");
+
+              console.log(selectedId);
+
+              <!-- 먼저 removeAttr로 지운다. -->
+
+              $("#prb1").removeAttr("aria-valuenow");
+
+              <!-- 그리고 새 값을 덧씌운다. -->
+
+              $("#prb1").attr("aria-valuenow", 50);
 
           });
 
