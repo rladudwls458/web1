@@ -27,7 +27,7 @@
 
             <p>
 
-                Test No. <font color="red"> <B> 7 </B> </font>
+                Test No. <font color="red"> <B> 8 </B> </font>
 
             </p>
 
@@ -50,6 +50,14 @@
           $(".buttonset-1").click(function(){
 
               var selectedId = $(this).attr("id");
+
+              <!-- 최소0 , 최대 100이므로 현재값이 그렇다면 튕겨내야한다. -->
+
+              if(value == 0 || value == 100)
+              {
+                  selectedId == "plus" ? alert("현재 값이 100이므로 더 커질수 없습니다.") : alert("현재 값이 0이므로 더 작아질수 없습니다.");
+                  return;
+              }
 
               selectedId == "plus" ? value += 10 : value -=10;
 
