@@ -27,7 +27,7 @@
 
             <p>
 
-                Test No. <font color="red"> <B> 6 </B> </font>
+                Test No. <font color="red"> <B> 7 </B> </font>
 
             </p>
 
@@ -35,7 +35,7 @@
 
         <div class="progress">
           <div class="progress-bar" id="prb1" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-              <span class="sr-only">0% complete</span>
+              <span class="sr-only" id='sron1'>0% complete</span>
           </div>
         </div>
 
@@ -44,11 +44,18 @@
 
         <script>
 
+          var value = 0;
+          var valueText = "";
+
           $(".buttonset-1").click(function(){
 
               var selectedId = $(this).attr("id");
 
-              console.log(selectedId);
+              selectedId == "plus" ? value += 10 : value -=10;
+
+              console.log(value);
+
+              valueText = value + "%";
 
               <!-- 먼저 removeAttr로 지운다. -->
 
@@ -56,8 +63,12 @@
 
               <!-- 그리고 새 값을 덧씌운다. -->
 
-              $("#prb1").attr("aria-valuenow", 50);
-              $("#prb1").css("width","50%");
+              $("#prb1").attr("aria-valuenow", value);
+              $("#prb1").css("width",valueText);
+
+              <!-- complete %로 바꾼다. -->
+
+              $("#sron1").html(valueText + " complete");
 
           });
 
