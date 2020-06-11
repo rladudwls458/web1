@@ -27,7 +27,7 @@
 
             <p>
 
-                Test No. <font color="red"> <B> 8 </B> </font>
+                Test No. <font color="red"> <B> 9 </B> </font>
 
             </p>
 
@@ -53,15 +53,26 @@
 
               <!-- 최소0 , 최대 100이므로 현재값이 그렇다면 튕겨내야한다. -->
 
-              if(value == 0 || value == 100)
+              if(selectedId == "plus")
               {
-                  selectedId == "plus" ? alert("현재 값이 100이므로 더 커질수 없습니다.") : alert("현재 값이 0이므로 더 작아질수 없습니다.");
-                  return;
+                  if(value == 100)
+                  {
+                      alert("100보다 클 수 없습니다.");
+                      return;
+                  }
+
+                  value += 10;
               }
+              else if(selectedId == "minus")
+              {
+                  if(value == 0)
+                  {
+                    alert("0보다 작을 수 없습니다.");
+                    return;
+                  }
 
-              selectedId == "plus" ? value += 10 : value -=10;
-
-              console.log(value);
+                  value -= 10;
+              }
 
               valueText = value + "%";
 
