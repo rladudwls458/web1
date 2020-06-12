@@ -27,7 +27,7 @@
 
             <p>
 
-                Test No. <font color="red"> <B> 3 </B> </font>
+                Test No. <font color="red"> <B> 4 </B> </font>
 
             </p>
 
@@ -40,12 +40,24 @@
 
             <script>
 
+                $("#pigMaster").append("<li><a href='#' class='link' id='lFirst'><</a></li>");
+
                 for(var i = 1 ; i <= 10 ; i++)
                 {
-                    console.log(i);
-
-                    $("#pigMaster").append("<li><a href='#' id='l"+ i +"'>"+ i +"</a></li>");
+                    $("#pigMaster").append("<li class=''><a href='#' class='link'  id='l"+ i +"'>"+ i +"</a></li>");
                 }
+
+                $("#pigMaster").append("<li><a href='#' class='link'  id='lLast'>></a></li>");
+
+                <!-- class -->
+
+                $(".link").click(function(){
+
+                    var selectedLink = $(this).append("id");
+
+                    console.log(selectedLink)
+
+                });
 
             </script>
 
