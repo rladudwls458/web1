@@ -27,7 +27,7 @@
 
             <p>
 
-                Test No. <font color="red"> <B> 6 </B> </font>
+                Test No. <font color="red"> <B> 7 </B> </font>
 
             </p>
 
@@ -55,9 +55,13 @@
 
                     var selectedLink = $(this).attr("id");
 
+                    <!-- 어느 버튼을 클릭했는지에 대한 정보를 가져온다. -->
+
                     var tmp = selectedLink.split('l');
 
-                    console.log(tmp);
+                    var goLink = tmp[1];
+
+                    console.log(goLink);
 
                 });
 
