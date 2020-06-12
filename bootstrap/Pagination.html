@@ -27,7 +27,7 @@
 
             <p>
 
-                Test No. <font color="red"> <B> 7 </B> </font>
+                Test No. <font color="red"> <B> 8 </B> </font>
 
             </p>
 
@@ -57,11 +57,43 @@
 
                     <!-- 어느 버튼을 클릭했는지에 대한 정보를 가져온다. -->
 
+                    console.log(selectedLink.parent());
+
                     var tmp = selectedLink.split('l');
 
                     var goLink = tmp[1];
 
-                    console.log(goLink);
+                    switch(goLink)
+                    {
+                      case "First":
+
+                        alert("첫 페이지로 이동합니다.");
+
+                        goLink = "1";
+
+                      break;
+                      case "Last":
+
+                        alert("마지막 페이지로 이동합니다.");
+
+                        goLink = "10";
+
+                      break;
+                      case "1":
+                      case "2":
+                      case "3":
+                      case "4":
+                      case "":
+                      case "61":
+                      case "7":
+                      case "8":
+                      case "9":
+                      case "10":
+
+                        alert(goLink + " 페이지로 이동합니다.");
+
+                      break;
+                    }
 
                 });
 
