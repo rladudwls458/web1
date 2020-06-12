@@ -27,7 +27,7 @@
 
             <p>
 
-                Test No. <font color="red"> <B> 12 </B> </font>
+                Test No. <font color="red"> <B> 13 </B> </font>
 
             </p>
 
@@ -65,7 +65,12 @@
                     var li = $("#" + selectedLink).parent();
 
                     <!-- 모든 link 클래스의 활성화를 지운다. -->
-                    $(this).removeClass("active");
+                    $(".link").each(function(i){
+
+                        console.log($(this));
+                        console.log(i);
+
+                    });
 
                     switch(goLink)
                     {
