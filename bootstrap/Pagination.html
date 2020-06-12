@@ -27,7 +27,7 @@
 
             <p>
 
-                Test No. <font color="red"> <B> 9 </B> </font>
+                Test No. <font color="red"> <B> 10 </B> </font>
 
             </p>
 
@@ -57,11 +57,15 @@
 
                     <!-- 어느 버튼을 클릭했는지에 대한 정보를 가져온다. -->
 
-                    console.log($("#" + selectedLink).parent());
-
                     var tmp = selectedLink.split('l');
 
                     var goLink = tmp[1];
+
+                    <!-- 선택된 link 의 상위 li -->
+                    var li = $("#" + selectedLink).parent();
+
+                    <!-- 모든 link 클래스의 활성화를 지운다. -->
+                    $(".link").removeClass("active");
 
                     switch(goLink)
                     {
@@ -83,14 +87,16 @@
                       case "2":
                       case "3":
                       case "4":
-                      case "":
-                      case "61":
+                      case "5":
+                      case "6":
                       case "7":
                       case "8":
                       case "9":
                       case "10":
 
                         alert(goLink + " 페이지로 이동합니다.");
+
+                        li.addClass("active");
 
                       break;
                     }
